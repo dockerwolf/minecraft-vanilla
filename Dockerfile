@@ -1,5 +1,5 @@
-FROM webhippie/java:latest
-MAINTAINER Thomas Boerger <thomas@webhippie.de>
+FROM cwlf/openjdk-openj9:latest
+MAINTAINER Chip Wolf <hello@chipwolf.uk>
 
 VOLUME ["/minecraft/merge", "/minecraft/world", "/minecraft/logs"]
 
@@ -24,7 +24,7 @@ ARG VCS_REF
 LABEL org.label-schema.version=$VERSION
 LABEL org.label-schema.build-date=$BUILD_DATE
 LABEL org.label-schema.vcs-ref=$VCS_REF
-LABEL org.label-schema.vcs-url="https://github.com/dockhippie/minecraft-vanilla.git"
+LABEL org.label-schema.vcs-url="https://github.com/dockerwolf/minecraft-vanilla.git"
 LABEL org.label-schema.name="Minecraft Vanilla"
-LABEL org.label-schema.vendor="Thomas Boerger"
+LABEL org.label-schema.vendor="Chip Wolf"
 LABEL org.label-schema.schema-version="1.0"

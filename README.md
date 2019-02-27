@@ -1,13 +1,13 @@
 # Minecraft
 
-[![](https://images.microbadger.com/badges/image/webhippie/minecraft-vanilla.svg)](https://microbadger.com/images/webhippie/minecraft-vanilla "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/cwlf/minecraft-vanilla.svg)](https://microbadger.com/images/cwlf/minecraft-vanilla)
 
-These are docker images for [Vanilla Minecraft](https://minecraft.net) running on a [Java container](https://registry.hub.docker.com/u/webhippie/java/).
+These are docker images for [Vanilla Minecraft](https://minecraft.net) running on an [OpenJDK OpenJ9 container](https://registry.hub.docker.com/u/cwlf/openjdk-openj9/).
 
 
 ## Versions
 
-To get an overview about the available versions please take a look at the [GitHub branches](https://github.com/dockhippie/minecraft-vanilla/branches/all) or our [Docker Hub tags](https://hub.docker.com/r/webhippie/minecraft-vanilla/tags/), these lists are always up to date.
+To get an overview about the available versions please take a look at the [GitHub branches](https://github.com/dockerwolf/minecraft-vanilla/branches/all) or our [Docker Hub tags](https://hub.docker.com/r/cwlf/minecraft-vanilla/tags/), these lists are always up to date.
 
 
 ## Volumes
@@ -38,8 +38,7 @@ ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
 
 ## Inherited environment variables
 
-* [webhippie/java](https://github.com/dockhippie/java#available-environment-variables)
-* [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
+* [dockerwolf/openjdk-openj9](https://github.com/dockerwolf/openjdk-openj9#available-environment-variables)
 
 
 ## Contributing
@@ -50,6 +49,7 @@ Fork -> Patch -> Push -> Pull Request
 ## Authors
 
 * [Thomas Boerger](https://github.com/tboerger)
+* [Chip Wolf](https://github.com/chipwolf)
 
 
 ## License
@@ -61,4 +61,5 @@ MIT
 
 ```
 Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2019 Chip Wolf <https://chipwolf.uk>
 ```
