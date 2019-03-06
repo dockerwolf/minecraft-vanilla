@@ -1,31 +1,13 @@
 #!/bin/bash
 source /usr/bin/entrypoint
 
-echo "> copy template dirs"
-find /minecraft/template -mindepth 1 -type d -print0 | while read -d $'\0' TEMPLATE
-do
-  RELATIVENAME=${TEMPLATE//\/minecraft\/template\//}
-
-  if [ ! -d "/minecraft/merge/${RELATIVENAME}" ]
-  then
-    mkdir "/minecraft/merge/${RELATIVENAME}"
-  fi
-
-  if [ ! -d "/minecraft/${RELATIVENAME}" ]
-  then
-    mkdir "/minecraft/${RELATIVENAME}"
-  fi
-done
-
 echo "> copy template files"
 find /minecraft/template -mindepth 1 -type f -print0 | while read -d $'\0' TEMPLATE
 do
   RELATIVENAME=${TEMPLATE//\/minecraft\/template\//}
 
-  if [ ! -e "/minecraft/merge/${RELATIVENAME}" ]
-  then
-    cp "${TEMPLATE}" "/minecraft/merge/${RELATIVENAME}"
-  fi
+  mkdir -p "$(dirname "/minecraft/${RELATIVENAME}")"
+  cp -f "${TEMPLATE}" "/minecraft/${RELATIVENAME}"
 done
 
 echo "> linking merge files"
@@ -33,15 +15,10 @@ find /minecraft/merge -mindepth 1 -type f -print0 | while read -d $'\0' MERGE
 do
   RELATIVENAME=${MERGE//\/minecraft\/merge\//}
 
-  mkdir -p "$(dirname "/minecraft/$RELATIVENAME")"
+  mkdir -p "$(dirname "/minecraft/${RELATIVENAME}")"
   rm -f "/minecraft/${RELATIVENAME}"
   ln -sf "/minecraft/merge/${RELATIVENAME}" "/minecraft/${RELATIVENAME}"
 done
-
-echo "> copy server properties"
-cp -f \
-  "/minecraft/merge/server.properties" \
-  "/minecraft/server.properties"
 
 if [ -n "${SERVER_MOTD}" ]
 then
