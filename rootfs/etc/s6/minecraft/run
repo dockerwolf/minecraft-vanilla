@@ -33,5 +33,5 @@ fi
 
 pushd /minecraft > /dev/null
   echo "> starting minecraft service"
-  exec ${STARTCMD} ${JAVA_OPTS} -jar ${MINECRAFT_JAR} ${SERVER_OPTS}
+  exec ${STARTCMD} ${JAVA_OPTS} -jar ${SERVER_JAR} ${SERVER_OPTS}
 popd > /dev/null
