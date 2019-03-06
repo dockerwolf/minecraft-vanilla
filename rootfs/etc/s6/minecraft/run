@@ -1,18 +1,8 @@
 #!/bin/bash
 
-if [ -f ./setup ]
+if [ -d ./setup.d ]
 then
-  source ./setup
-fi
-
-if [ -f ./custom ]
-then
-  source ./custom
-fi
-
-if [ -d ./custom.d ]
-then
-  for FILE in $(find ./custom.d -type f -iname *.sh | sort)
+  for FILE in $(find ./setup.d -type f -iname *.sh | sort)
   do
     source ${FILE}
   done
