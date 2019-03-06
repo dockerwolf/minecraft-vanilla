@@ -6,9 +6,6 @@ declare -x SERVER_MAXHEAP
 declare -x SERVER_MINHEAP
 [[ -z "${SERVER_MINHEAP}" ]] && SERVER_MINHEAP="512M"
 
-declare -x SERVER_MAXPERM
-[[ -z "${SERVER_MAXPERM}" ]] && SERVER_MAXPERM="128M"
-
 declare -x SERVER_OPTS
 [[ -z "${SERVER_OPTS}" ]] && SERVER_OPTS="nogui"
 

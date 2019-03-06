@@ -20,11 +20,6 @@ fi
 
 STARTCMD="/usr/bin/env java"
 
-if [ -n "${SERVER_MAXPERM}" ]
-then
-  STARTCMD="${STARTCMD} -XX:MaxPermSize=${SERVER_MAXPERM}"
-fi
-
 if [ -n "${SERVER_MAXHEAP}" ]
 then
   STARTCMD="${STARTCMD} -Xmx${SERVER_MAXHEAP}"
